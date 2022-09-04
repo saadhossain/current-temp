@@ -35,13 +35,26 @@ const setValue  = (id, value) =>{
     getPlaceholder.innerText = value; 
 }
 
+//Get the search input value
+const getSearchInput = () => {
+    const Input = document.getElementById('city-name');
+    const Text = Input.value;
+    return Text;
+}
+
 document.getElementById('search-btn').addEventListener('click', function(){
-    const searchText = document.getElementById('city-name').value;
+    const searchText = getSearchInput();
+    //Clear the previous search text
+    document.getElementById('city-name').value = '';
+    // searchInput.value = '';
     loadWeather(searchText);
 })
 document.getElementById('city-name').addEventListener('keypress', function(event){
-    const searchText = document.getElementById('city-name').value;
+    const searchText = getSearchInput();
+    
     if(event.key === 'Enter'){
+        //Clear the previous search text
+        document.getElementById('city-name').value = '';
         loadWeather(searchText);
     }
 })
