@@ -39,11 +39,11 @@ document.getElementById('search-btn').addEventListener('click', function(){
     const searchText = document.getElementById('city-name').value;
     loadWeather(searchText);
 })
-// document.getElementById('city-name').addEventListener('keypress', function(event){
-//     const searchText = document.getElementById('city-name').value;
-//     if(event.key === 'Enter'){
-//         loadWeather(searchText);
-//     }
-// })
+document.getElementById('city-name').addEventListener('keypress', function(event){
+    const searchText = document.getElementById('city-name').value;
+    if(event.key === 'Enter'){
+        loadWeather(searchText);
+    }
+})
 
 loadWeather('Dhaka');
